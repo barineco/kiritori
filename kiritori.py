@@ -10,6 +10,7 @@ api = Client()
 api.login(username, password)
 
 JST = timezone(timedelta(hours=+9))
+now = datetime.now(JST)
 wait_seconds = (60 - now.minute - 1) * 60 + (60 - now.second)
 time.sleep(max(wait_seconds, 0))
 
