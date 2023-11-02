@@ -1,6 +1,7 @@
 name: Run Kiritori Script
 
 on:
+  workflow_dispatch:
   schedule:
     - cron: '0 * * * *' 
 
