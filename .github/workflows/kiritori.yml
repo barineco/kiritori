@@ -2,14 +2,14 @@ name: Run Kiritori Script
 
 on:
   schedule:
-    - cron: '0 * * * *'  # 1時間ごとに実行
+    - cron: '0 * * * *' 
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2  # リポジトリのコードをチェックアウト
+    - uses: actions/checkout@v2
 
     - name: Set up Python
       uses: actions/setup-python@v2
@@ -22,7 +22,7 @@ jobs:
         pip install atproto  
 
     - name: Run the script
-      env:  # 環境変数を設定
+      env:
         BSKY_USERNAME: ${{ secrets.BSKY_USERNAME }}
         BSKY_PASSWORD: ${{ secrets.BSKY_PASSWORD }}
       run: python kiritori.py  
